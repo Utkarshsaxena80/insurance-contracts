@@ -1,0 +1,332 @@
+{
+  "address": "0x58d83F0973F8538d64F262C4F8E1C91f403650Dc",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "NFTDetails",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "NFT_yes_or_no",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "NFT_yes_or_noStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_status",
+          "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rejectedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "getProposalStateAfterRejection",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getUserInfo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "passProposalState",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "answer",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "passProposalValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "choice",
+          "type": "uint256"
+        }
+      ],
+      "name": "putUserInfo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "rejectedClaim",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "rejectedValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "setAddressHasNFT",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "userInsurance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x18e893614dab865a0234639d87aed0f95ce19c304c9af554fc169ff9cbd2695c",
+  "receipt": {
+    "to": null,
+    "from": "0x712c670352E964c29430e5f6F64bE8A1E73ff4f2",
+    "contractAddress": "0x58d83F0973F8538d64F262C4F8E1C91f403650Dc",
+    "transactionIndex": 14,
+    "gasUsed": "541422",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xc3f7ef236bd4e5c5f98c20a145c4e34b6531d7d86a18cb264a7b525d0d0f737b",
+    "transactionHash": "0x18e893614dab865a0234639d87aed0f95ce19c304c9af554fc169ff9cbd2695c",
+    "logs": [],
+    "blockNumber": 3615276,
+    "cumulativeGasUsed": "17961361",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "25462d515e36e39f1cda27e3b162e3e8",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"NFTDetails\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"NFT_yes_or_no\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"NFT_yes_or_noStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_status\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_rejectedValue\",\"type\":\"uint256\"}],\"name\":\"getProposalStateAfterRejection\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserInfo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"passProposalState\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"answer\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"passProposalValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"choice\",\"type\":\"uint256\"}],\"name\":\"putUserInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rejectedClaim\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"rejectedValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"setAddressHasNFT\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userInsurance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/master.sol\":\"masterContract\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/master.sol\":{\"content\":\"//SPDX-License-Identifier:MIT\\npragma solidity ^0.8.8;\\ncontract masterContract{\\n\\n    mapping(address=>bool) public  NFT_yes_or_no;\\n    mapping (address =>uint) public  userInsurance;//stores userInsurance choice\\n    mapping(address=>uint256)  public NFTDetails;\\n    mapping(address=>bool)  public rejectedClaim;\\n\\n    mapping(address=>uint256) public rejectedValue; \\n    \\n    \\n    function putUserInfo(uint256 choice) public  {\\n     userInsurance[msg.sender]=choice;\\n    }\\n    function getUserInfo() public view returns (uint256){\\n      return userInsurance[msg.sender];\\n    }\\n    function setAddressHasNFT(address user) public {\\n      require(!NFT_yes_or_no[user],\\\"already has nft\\\");\\n        NFT_yes_or_no[user]=true;\\n    }\\n    function NFT_yes_or_noStatus(address user) public view returns (bool) {\\n    return NFT_yes_or_no[user];\\n    }\\n    function getProposalStateAfterRejection(bool _status,address user,uint256 _rejectedValue) public returns (bool ){\\n            //get From DAO.sol\\n         rejectedValue[user]=_rejectedValue;\\n         rejectedClaim[user]=_status;\\n    }\\n    function passProposalState(address user) public  view returns(bool answer){                    \\n    return rejectedClaim[user];    //to the isnuranceOne.sol\\n    }\\n    function passProposalValue(address user) public view returns(uint256){\\n      return rejectedValue[user];\\n    }\\n\\n}\",\"keccak256\":\"0x5286a6ca534376110407fdc73dbcfc422652ee219f0793e1ee0c1d1c52576670\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b506108d88061001f6000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c80638e3c0143116100715780638e3c01431461019f578063933fc618146101cf57806398cc9eba146101ff578063a694c98d1461022f578063c874ff461461025f578063ed2733561461028f576100b4565b80634b7b86c5146100b95780635483ecad146100e9578063555e34cd146101195780635d8d1585146101355780636db631d9146101535780637a03ca371461016f575b600080fd5b6100d360048036038101906100ce91906106b6565b6102bf565b6040516100e091906106fe565b60405180910390f35b61010360048036038101906100fe91906106b6565b610314565b60405161011091906106fe565b60405180910390f35b610133600480360381019061012e919061074f565b610334565b005b61013d61037b565b60405161014a919061078b565b60405180910390f35b61016d600480360381019061016891906106b6565b6103c2565b005b610189600480360381019061018491906106b6565b6104a8565b604051610196919061078b565b60405180910390f35b6101b960048036038101906101b491906106b6565b6104c0565b6040516101c691906106fe565b60405180910390f35b6101e960048036038101906101e491906106b6565b6104e0565b6040516101f6919061078b565b60405180910390f35b610219600480360381019061021491906106b6565b6104f8565b604051610226919061078b565b60405180910390f35b610249600480360381019061024491906107d2565b610510565b60405161025691906106fe565b60405180910390f35b610279600480360381019061027491906106b6565b6105b4565b60405161028691906106fe565b60405180910390f35b6102a960048036038101906102a491906106b6565b61060a565b6040516102b6919061078b565b60405180910390f35b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff169050919050565b60036020528060005260406000206000915054906101000a900460ff1681565b80600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555050565b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b6000808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161561044e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161044590610882565b60405180910390fd5b60016000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050565b60026020528060005260406000206000915090505481565b60006020528060005260406000206000915054906101000a900460ff1681565b60016020528060005260406000206000915090505481565b60046020528060005260406000206000915090505481565b600081600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555083600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055509392505050565b6000600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff169050919050565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b600061068382610658565b9050919050565b61069381610678565b811461069e57600080fd5b50565b6000813590506106b08161068a565b92915050565b6000602082840312156106cc576106cb610653565b5b60006106da848285016106a1565b91505092915050565b60008115159050919050565b6106f8816106e3565b82525050565b600060208201905061071360008301846106ef565b92915050565b6000819050919050565b61072c81610719565b811461073757600080fd5b50565b60008135905061074981610723565b92915050565b60006020828403121561076557610764610653565b5b60006107738482850161073a565b91505092915050565b61078581610719565b82525050565b60006020820190506107a0600083018461077c565b92915050565b6107af816106e3565b81146107ba57600080fd5b50565b6000813590506107cc816107a6565b92915050565b6000806000606084860312156107eb576107ea610653565b5b60006107f9868287016107bd565b935050602061080a868287016106a1565b925050604061081b8682870161073a565b9150509250925092565b600082825260208201905092915050565b7f616c726561647920686173206e66740000000000000000000000000000000000600082015250565b600061086c600f83610825565b915061087782610836565b602082019050919050565b6000602082019050818103600083015261089b8161085f565b905091905056fea26469706673582212203ed1fcc6d5199adcae296f79d47a4a324aa9f68684e812068e8f70b620d0e18064736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100b45760003560e01c80638e3c0143116100715780638e3c01431461019f578063933fc618146101cf57806398cc9eba146101ff578063a694c98d1461022f578063c874ff461461025f578063ed2733561461028f576100b4565b80634b7b86c5146100b95780635483ecad146100e9578063555e34cd146101195780635d8d1585146101355780636db631d9146101535780637a03ca371461016f575b600080fd5b6100d360048036038101906100ce91906106b6565b6102bf565b6040516100e091906106fe565b60405180910390f35b61010360048036038101906100fe91906106b6565b610314565b60405161011091906106fe565b60405180910390f35b610133600480360381019061012e919061074f565b610334565b005b61013d61037b565b60405161014a919061078b565b60405180910390f35b61016d600480360381019061016891906106b6565b6103c2565b005b610189600480360381019061018491906106b6565b6104a8565b604051610196919061078b565b60405180910390f35b6101b960048036038101906101b491906106b6565b6104c0565b6040516101c691906106fe565b60405180910390f35b6101e960048036038101906101e491906106b6565b6104e0565b6040516101f6919061078b565b60405180910390f35b610219600480360381019061021491906106b6565b6104f8565b604051610226919061078b565b60405180910390f35b610249600480360381019061024491906107d2565b610510565b60405161025691906106fe565b60405180910390f35b610279600480360381019061027491906106b6565b6105b4565b60405161028691906106fe565b60405180910390f35b6102a960048036038101906102a491906106b6565b61060a565b6040516102b6919061078b565b60405180910390f35b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff169050919050565b60036020528060005260406000206000915054906101000a900460ff1681565b80600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555050565b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b6000808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161561044e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161044590610882565b60405180910390fd5b60016000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050565b60026020528060005260406000206000915090505481565b60006020528060005260406000206000915054906101000a900460ff1681565b60016020528060005260406000206000915090505481565b60046020528060005260406000206000915090505481565b600081600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555083600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055509392505050565b6000600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff169050919050565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b600061068382610658565b9050919050565b61069381610678565b811461069e57600080fd5b50565b6000813590506106b08161068a565b92915050565b6000602082840312156106cc576106cb610653565b5b60006106da848285016106a1565b91505092915050565b60008115159050919050565b6106f8816106e3565b82525050565b600060208201905061071360008301846106ef565b92915050565b6000819050919050565b61072c81610719565b811461073757600080fd5b50565b60008135905061074981610723565b92915050565b60006020828403121561076557610764610653565b5b60006107738482850161073a565b91505092915050565b61078581610719565b82525050565b60006020820190506107a0600083018461077c565b92915050565b6107af816106e3565b81146107ba57600080fd5b50565b6000813590506107cc816107a6565b92915050565b6000806000606084860312156107eb576107ea610653565b5b60006107f9868287016107bd565b935050602061080a868287016106a1565b925050604061081b8682870161073a565b9150509250925092565b600082825260208201905092915050565b7f616c726561647920686173206e66740000000000000000000000000000000000600082015250565b600061086c600f83610825565b915061087782610836565b602082019050919050565b6000602082019050818103600083015261089b8161085f565b905091905056fea26469706673582212203ed1fcc6d5199adcae296f79d47a4a324aa9f68684e812068e8f70b620d0e18064736f6c634300081c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 5021,
+        "contract": "contracts/master.sol:masterContract",
+        "label": "NFT_yes_or_no",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 5025,
+        "contract": "contracts/master.sol:masterContract",
+        "label": "userInsurance",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 5029,
+        "contract": "contracts/master.sol:masterContract",
+        "label": "NFTDetails",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 5033,
+        "contract": "contracts/master.sol:masterContract",
+        "label": "rejectedClaim",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 5037,
+        "contract": "contracts/master.sol:masterContract",
+        "label": "rejectedValue",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_uint256)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
