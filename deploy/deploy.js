@@ -7,9 +7,10 @@ module.exports=async()=>{
     const chainId=network.config.chainId;
     log(`Network: ${network.name} (Chain ID: ${chainId})`);
     log(`Deployer: ${deployer}`);
+
      const FEE = ethers.parseEther("0.1");
-        const DAOfee = ethers.parseEther("0.5");
-        const NFTfee=ethers.parseEther("0.2");
+      const DAOfee = ethers.parseEther("0.5");
+      const NFTfee=ethers.parseEther("0.2");
 
     try{
          const masterContract= await deploy("masterContract",{

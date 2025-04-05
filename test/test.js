@@ -1,7 +1,5 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const { TASK_FLATTEN_GET_FLATTENED_SOURCE_AND_METADATA } = require("hardhat/builtin-tasks/task-names");
-
 // describe("InsuranceOne", function () {
 //     let InsuranceOne, insuranceOne, owner, user1, user2;
 //     const FEE = ethers.parseEther("0.1");
@@ -300,23 +298,7 @@ const { TASK_FLATTEN_GET_FLATTENED_SOURCE_AND_METADATA } = require("hardhat/buil
 
 describe("final full working",function (){
    
-
-
-    //beforeEach(
-      //first user registers
-      //then buys a insurance
-      //pays for premium
-      //creates NFT
-   // )
-    //accepts the claim(
-    //hasNft
-    //no nft
-      //)
-    //rejects the claim 
-    //users votes on proposal
-    //final payout 
-
-    let InsuranceOne, insuranceOne, owner, user1, user2,user3;
+    let InsuranceOne, insuranceOne, owner, user1, user2,user3,user4;
     let Master,master,DAO,dao,Token,token;
     let NFT,nft;
 
@@ -327,7 +309,7 @@ describe("final full working",function (){
     //first deploy master
     //then deploy DAO
     beforeEach(async function (){
-      [owner, user1, user2,user3] = await ethers.getSigners();
+      [owner, user1, user2,user3,user4] = await ethers.getSigners();
       Master=await ethers.getContractFactory("masterContract");
       master= await Master.deploy();
       await master.waitForDeployment();
@@ -427,7 +409,7 @@ describe("final full working",function (){
 
     })
 
-    it("rejects makes proposal and people vote",async function (){
+    it("rejects makes proposal and people vote",async function (){ 
       await expect(
         insuranceOne.connect(user1).rejectClaim(
           "I disagree with the claim outcome",
@@ -436,25 +418,35 @@ describe("final full working",function (){
           { value: ethers.parseEther("0.5") } 
         )
       ).to.emit(dao, "ProposalCreated");
-
+      console.log("Proposal rejected value:", (await master.rejectedValue(user1.address)).toString()); // Should be "0.5 ETH" in wei
+      console.log("Proposal result for user1:", await master.rejectedClaim(user1.address)); 
+      
       //mint governance tokens 
-    await token.mint(user1.address,ethers.parseEther("100"));
-    await token.mint(user2.address,ethers.parseEther("100"));
-    await token.mint(user3.address,ethers.parseEther("100"));
-
-    await token.connect(user1).approve(dao.getAddress(), ethers.parseEther("10"));
-     await token.connect(user2).approve(dao.getAddress(), ethers.parseEther("10"));
-     await token.connect(user3).approve(dao.getAddress(), ethers.parseEther("10"));
-
-  // Users vote
-
-     await dao.connect(user1).voteOnProposal(0, true, ethers.parseEther("2"));
-     await dao.connect(user2).voteOnProposal(0, false, ethers.parseEther("1"));
-     await dao.connect(user3).voteOnProposal(0, true, ethers.parseEther("2"));
-    
-    // console.log(await master.rejectClaim[user1.address]);
-     await dao.connect(owner).processPassedProposals(0);
-     console.log(await master.rejectedValue(user1.address));
+      await token.mint(user1.address,ethers.parseEther("100"));
+      await token.mint(user2.address,ethers.parseEther("100"));
+      await token.mint(user3.address,ethers.parseEther("100"));
+      await token.mint(user4.address,ethers.parseEther("100"));
+      await token.connect(user1).approve(dao.getAddress(), ethers.parseEther("10"));
+      await token.connect(user2).approve(dao.getAddress(), ethers.parseEther("10"));
+      await token.connect(user3).approve(dao.getAddress(), ethers.parseEther("10"));
+      await token.connect(user4).approve(dao.getAddress(), ethers.parseEther("10"));
+      
+      // Users vote
+      
+      await dao.connect(user1).voteOnProposal(0, true, ethers.parseEther("2"));
+      await dao.connect(user2).voteOnProposal(0, true, ethers.parseEther("1"));
+      await dao.connect(user3).voteOnProposal(0, true, ethers.parseEther("2"));
+      await dao.connect(user4).voteOnProposal(0, false, ethers.parseEther("2"));
+      await expect(dao.connect(user1).processPassedProposals(0))
+    .to.emit(master, "ProposalHandled")
+    .withArgs(user1.address, true, ethers.parseEther("0.5"));
+   
+      console.log("Proposal result for user1:", await master.rejectedClaim(user1.address)); // true or false
+     if(await dao.connect(user1).isPassed(0)){
+        console.log("passed");
+     }
+     
+   console.log(await master.rejectedValue(user1.address));
      const tx = await insuranceOne.connect(user1).getResultOfRejectedClaims();
    
      

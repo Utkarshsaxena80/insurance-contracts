@@ -34,6 +34,7 @@ contract InsuranceDAO is ReentrancyGuard {
     event Voted(uint256 proposalId, address voter, bool voteFor, uint256 amount);
     event ProposalExecuted(uint256 id, bool passed);
     event DAO_Joined(address indexed user);
+    event ProposalProcessed(uint256 id, address proposer, bool accepted, uint256 amount);
 
     modifier onlyOwner() {
         require(msg.sender==owner, "Only owner can perform this action");
@@ -42,6 +43,7 @@ contract InsuranceDAO is ReentrancyGuard {
 
     masterContract public master;
     AgroCoin public token;
+    uint256[] private proposalLength;
 
     constructor(address _governanceToken,uint256 _fee,address _a) {
         
@@ -68,7 +70,6 @@ contract InsuranceDAO is ReentrancyGuard {
 
         require(msg.value>=FEE,"Not enough eth");
        // require(token.balanceOf(msg.sender)>=100*10**18, "Need at least 100 tokens to create a proposal");
-        proposalCount++;
         proposals[proposalCount] = Proposal({
             proposer:msg.sender,
             id: proposalCount,
@@ -79,6 +80,8 @@ contract InsuranceDAO is ReentrancyGuard {
             executed: false,
             amountToBeSetteled: _amountToBeSetteled
         });
+        proposalLength.push(proposalCount);
+        proposalCount++;
         emit ProposalCreated(proposalCount, description);
     }
 
@@ -98,17 +101,32 @@ contract InsuranceDAO is ReentrancyGuard {
         emit Voted(proposalId, msg.sender, voteFor, amount);
     }
 
-function processPassedProposals(uint256 proposalId) public {
-    require(proposals[proposalId].id == proposalId, "Proposal does not exist");
-    
-    uint256 totalVotes = proposals[proposalId].votesFor + proposals[proposalId].votesAgainst;
-    require(totalVotes>=4, "Not enough votes to process");
+    function isPassed( uint256 proposalId) public returns(bool) {
+     require(proposals[proposalId].id == proposalId, "Proposal does not exist");
+     uint256 totalVotes = proposals[proposalId].votesFor + proposals[proposalId].votesAgainst;
+     require(totalVotes>=4, "Not enough votes to process");      
+     if (proposals[proposalId].votesFor > proposals[proposalId].votesAgainst) {
+       return true;
+    } else return false;
+} 
 
-    if (proposals[proposalId].votesFor > proposals[proposalId].votesAgainst) {
-        master.getProposalStateAfterRejection(true, proposals[proposalId].proposer, proposals[proposalId].amountToBeSetteled);
-    } else {
-        master.getProposalStateAfterRejection(false, proposals[proposalId].proposer, proposals[proposalId].amountToBeSetteled);
-    }
+function processPassedProposals(uint256 proposalId) public {
+    Proposal storage proposal = proposals[proposalId];
+    require(proposal.id == proposalId, "Proposal does not exist");
+    uint256 totalVotes = proposal.votesFor + proposal.votesAgainst;
+    require(totalVotes >= 4, "Not enough votes to process");
+    bool isAccepted = proposal.votesFor > proposal.votesAgainst;
+    master.getProposalStateAfterRejection(isAccepted, proposal.proposer, proposal.amountToBeSetteled);
+    emit ProposalProcessed(proposalId, proposal.proposer, isAccepted, proposal.amountToBeSetteled);
 }
-     
+
+
+   function getAllProposals() public returns (Proposal[] memory ){
+    
+        Proposal[] memory allProposals= new Proposal[](proposalLength.length);
+        for(uint256 i=0;i<proposalLength.length;i++){
+            allProposals[i]=proposals[proposalLength[i]];
+        }
+        return allProposals;
+     }
 }

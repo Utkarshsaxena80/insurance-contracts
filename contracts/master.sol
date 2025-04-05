@@ -6,10 +6,8 @@ contract masterContract{
     mapping (address =>uint) public  userInsurance;//stores userInsurance choice
     mapping(address=>uint256)  public NFTDetails;
     mapping(address=>bool)  public rejectedClaim;
-
     mapping(address=>uint256) public rejectedValue; 
-    
-    
+    event ProposalHandled(address user, bool status, uint256 amount);
     function putUserInfo(uint256 choice) public  {
      userInsurance[msg.sender]=choice;
     }
@@ -23,10 +21,12 @@ contract masterContract{
     function NFT_yes_or_noStatus(address user) public view returns (bool) {
     return NFT_yes_or_no[user];
     }
-    function getProposalStateAfterRejection(bool _status,address user,uint256 _rejectedValue) public returns (bool ){
-            //get From DAO.sol
+    function getProposalStateAfterRejection(bool _status,address user,uint256 _rejectedValue) 
+     public 
+    {
          rejectedValue[user]=_rejectedValue;
          rejectedClaim[user]=_status;
+     emit ProposalHandled(user, _status, rejectedValue[user]);
     }
     function passProposalState(address user) public  view returns(bool answer){                    
     return rejectedClaim[user];    //to the isnuranceOne.sol
